@@ -4,24 +4,19 @@ let i = 0;
 let j = 0;
 function setup() {
 
-    createCanvas(600, 600);
+    createCanvas(windowWidth, windowHeight);
 
     for(let index = 0; index < width / 10; index++) {
-        values.push(floor(random(5,height)));
+        values.push( floor( random(10, height)));
     };
-    frameRate(10);
-    // for(let i = 0; i < values.length; i++) {
-    //     for(let j = 0; j < ; j++) {
-    //
-    //
-    //     }
-    // };
+    frameRate(20);
+    strokeWeight(10);
 
 }
 
 function draw() {
 
-    background(0);
+    background(20);
 
     let a = values[j];
     let b = values[j + 1];
@@ -34,9 +29,9 @@ function draw() {
 
     for(let i = 0; i < values.length; i++) {
         let k = map(i, 0, values.length, 0, width);
-        stroke(255);
+        stroke(237, 102, 5);
         if( i == j || i == j + 1) {
-            stroke(255, 0 , 0);
+            stroke(8, 201, 56);
         }
         line(k, height, k, height - values[i]);
     }
@@ -51,6 +46,5 @@ function draw() {
         console.log("finished");
         noLoop();
     }
-
 
 }
